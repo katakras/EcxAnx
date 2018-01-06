@@ -25,20 +25,18 @@ N = 3
 def eleni(y_o, beta,alpha, N):
     
   
-    variable =[]
-    s = y_o
+    y =[y_o]
+
     for i in range(N):
-       epsilon = random.randint(0,1)
-       y_i= alpha + beta*s + epsilon
+       epsilon = np.random.normal()
+       y_i= alpha + beta*y[-1] + epsilon
        
-       variable  = np.variable.append(y_i)
-      
-       s = y_i
+       y.append(y_i)
 
-    return variable
+    return y
 
 
-simulate  = eleni(40,2,2,100)
+simulate  = eleni(40,beta,alpha,100)
 
 print(simulate)
   
