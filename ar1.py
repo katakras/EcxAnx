@@ -36,10 +36,11 @@ def eleni(y_o, beta,alpha, N):
     return y
 
 
+np.random.seed(0)
 simulate  = eleni(40,beta,alpha,100)
 
 print(simulate)
-  
+print(simulate[-1])
      
     
             
