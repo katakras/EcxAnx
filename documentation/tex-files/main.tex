@@ -26,8 +26,38 @@ In the discrete world, given a random variable $X$, we can define the following 
 \mathbb{E}[X] = \sum_{x \in X} x \mathbb{P}[X = x]
 \end{equation}
 
+\begin{equation}
+\text{Var}[X] = \sum_{x \in X} (x-\mathbb{E}[X])^2 \mathbb{P}[X = x]
+\end{equation}
+
+\begin{equation}
+\text{Cov}[X,Y] = \sum_{\omega \in \Omega} (X(\omega) - \mathbb{E}[X])(Y(\omega) - \mathbb{E}[Y])\mathbb{P}[X=X(\omega), Y=Y(\omega)]
+\end{equation}
+
+Given two samples $X = \{ x_1, x_2, ..., x_n\}$ and $Y = \{y_1, y_2, ..., y_n \}$, one can also define the sample version of the previous operators:
+
+\begin{equation}
+\mathbb{E}[X] = \frac{1}{n} \sum_{i=1}^n x_i
+\end{equation}
+
+\begin{equation}
+\text{Var}[X] = \frac{1}{n}\sum_{i=1}^n (x_i-\mathbb{E}[X])^2
+\end{equation}
+
+\begin{equation}
+\text{Cov}[X,Y] = \frac{1}{n}\sum_{i=1}^n (x_i - \mathbb{E}[X])(y_i - \mathbb{E}[Y])
+\end{equation}
 
 \subsection{Time Series}
-A time series is a collection of data sorted, usually by date.
+A time series is a collection of data sorted, usually by date,
+
+$$X = [x_1, x_2, ..., x_n] $$
+
+Similarly to the previous operators one can define the autocovariance of lag $k$ of a time series as
+\begin{equation}
+\text{Cov}[X, \mathcal{L}^k X] = \frac{1}{n}\sum_{i=1}^{n-k} (x_i - \mathbb{E}[X])(x_{i+k} - \mathbb{E}[X])
+\end{equation}
+
+where we are assuming that the expectation of the lagged or trimmed time series is the same as the expectation of the time series itself
 
 \end{document}
