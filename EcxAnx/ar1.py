@@ -7,8 +7,6 @@ Created on Sat Jan  6 13:07:32 2018
 """
 
 import numpy as np
-import pandas 
-import random
 
 y_o =50
 
